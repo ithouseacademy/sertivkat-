@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=4c54bed6-fcf2-424e-83d2-4f4b035eef60
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack Sertifikat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- POPUP -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <h2>🎓 Full Stack Sertifikat</h2>
+
+      <div id="studentsContainer">
+        <div class="student-row">
+          <input type="text" class="first-name" placeholder="Ism" />
+          <input type="text" class="last-name" placeholder="Familiya" />
+          <button type="button" class="remove-student" title="O'chirish">×</button>
+        </div>
+      </div>
+
+      <button type="button" id="addStudent" class="add-student">+ O'quvchi qo'shish</button>
+
+      <div class="btns">
+        <button class="btn-generate" onclick="generateCertificate()">Sertifikat yaratish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE TEMPLATE (hidden) -->
+  <div class="certificate" id="certificate" style="display: none">
+    <img src="image.png" alt="certificate" />
+    <h1 class="field name"></h1>
+    <p class="field sana"></p>
+  </div>
+
+  <!-- GENERATED CERTIFICATES -->
+  <div id="certificates"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

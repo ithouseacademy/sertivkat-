@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.certificate,
+.certificate img,
+.field {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* POPUP */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-box {
+  width: 420px;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modal-box h2 {
+  margin-bottom: 18px;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-box input {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 12px;
+  padding: 0 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.modal-box input:focus {
+  border-color: #f7971e;
+}
+
+.student-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.student-row input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.remove-student {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: #ff5252;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.remove-student:hover {
+  background: #e04040;
+}
+
+.add-student {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  border: 1px dashed #aaa;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 14px;
+  color: #555;
+}
+
+.add-student:hover {
+  background: #f0f0f0;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-generate {
+  width: 100%;
+  padding: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  border: none;
+  border-radius: 8px;
+  color: #1a1a2e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-generate:hover {
+  opacity: 0.9;
+}
+
+#certificates {
+  margin-top: 20px;
+}
+
+#certificates .certificate {
+  margin-bottom: 40px;
+}
+
+/* CERTIFICATE */
+.certificate {
+  width: 1123px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.certificate img {
+  width: 100%;
+  display: block;
+}
+
+.field {
+  position: absolute;
+  text-align: center;
+  color: #000;
+}
+
+/* ISM - rasm ustida joy */
+.name {
+  top: 56.5%;
+  left: 0;
+  width: 100%;
+  padding-left: 84px;
+  font-size: 65px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+/* SANA */
+.sana {
+  top: 89%;
+  left: -428px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* PRINT */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .modal {
+    display: none !important;
+  }
+
+  #certificates {
+    margin-top: 0 !important;
+  }
+
+  #certificates .certificate {
+    margin: 0 !important;
+    width: 297mm;
+    height: 210mm;
+    max-width: none;
+    position: relative;
+    overflow: hidden;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  #certificates .certificate + .certificate {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .certificate img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+  }
+
+  .name,
+  .sana {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
